@@ -1,0 +1,56 @@
+{
+  "name": "happy-bot",
+  "version": "1.0.0",
+  "description": "A bot that may make your working-life happier",
+  "main": "index.js",
+  "repository": "https://github.com/poepanda/happy-bot",
+  "author": "Po",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "enableScripts": "chmod +x ./scripts/*",
+    "start": "nodemon --exec babel-node -- ./bot.js",
+    "build:prod": "npm run lint && ./node-modules/.bin/babel ./bot.js -o ./dist/bot.js",
+    "start:prod": "node ./dist/bot.js",
+    "lint": "eslint ./src"
+  },
+  "jest": {
+    "testRegex": "**/.*\\.test.js$",
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    }
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/.data/*",
+      "**/docs/*"
+    ]
+  },
+  "dependencies": {
+    "app-module-path": "^2.2.0",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "botkit": "^0.6.14",
+    "botkit-storage-mongo": "^1.0.7",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-hbs": "^1.0.4",
+    "glob": "^7.1.2",
+    "lodash": "^4.17.10",
+    "mongoose": "^5.1.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.0.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-latest": "^6.24.1",
+    "debug": "^3.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "jest": "^23.1.0",
+    "nodemon": "^1.17.5"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "presets": [
+    ["env", {
+      "target": {
+        "node": "8.3"
+      }
+    }]
+  ],
+  "plugins": [
+    "babel-plugin-transform-object-rest-spread"
+  ]
+}

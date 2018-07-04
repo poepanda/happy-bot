@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dictionary</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+  <style>
+    .skills {
+      padding: 30px 4px;
+    }
+    .skill-card {
+      margin-top: 24px;
+    }
+    .skill-card__sample {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #cecece;
+    }
+    .card-footer-item {
+      display: block;
+      padding: 0;
+    }
+    .card-footer-item:nth-child(1) .skill-card__sample {
+      text-align: right;
+    }
+    .card-footer-item:nth-child(2) .skill-card__sample {
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Dictionary
+      </h1>
+      <p class="subtitle">
+        "Something that I can do ; )" - Happy Bot
+      </p>
+
+        {{#each skills as |skill key|}}
+          <div class="card skill-card column is-half">
+            <div class="card-content">
+              <p class="title">
+                {{ skill.name }}
+              </p>
+              <p class="subtitle">
+                Examples
+              </p>
+            </div>
+            <footer class="card-footer">
+              <div class="card-footer-item">
+                {{#each skill.examples as |example sampleKey|}}
+                  <div class="skill-card__sample">{{ example.heard }}</div>
+                {{/each}}
+              </div>
+              <div class="card-footer-item">
+                {{#each skill.examples as |example sampleKey|}}
+                  <div class="skill-card__sample">{{ example.reply }}</div>
+                {{/each}}
+              </div>
+            </footer>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+
+</body>
+</html>
